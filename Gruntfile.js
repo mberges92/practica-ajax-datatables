@@ -19,7 +19,7 @@ module.exports = function (grunt) {
   // Configurable paths
   var config = {
     app: 'app',
-    dist: 'dist'
+    dist: '/var/www/dist'
   };
 
   // Define the configuration for all the tasks
@@ -294,6 +294,15 @@ module.exports = function (grunt) {
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
           dest: '<%= config.dist %>/.htaccess'
+          }, {
+          src: '<%= config.app %>/php/cargar_vista.php',
+          dest: '<%= config.dist %>/php/cargar_vista.php'
+        }, {
+          src: '<%= config.app %>/php/mysql.php',
+          dest: '<%= config.dist %>/php/mysql.php'
+        }, {
+          src: '<%= config.app %>/php/ssp.class.php',
+          dest: '<%= config.dist %>/php/ssp.class.php'
         }]
       },
       styles: {
