@@ -36,14 +36,15 @@ $(document).ready(function() {
         }, {
             'data': 'clinica'
         }, {
-            'data': 'idDoctor',
+            'data': 'id_doctor',
+
             /*añadimos las clases editarbtn y borrarbtn para procesar los eventos click de los botones. No lo hacemos mediante id ya que habrá más de un
             botón de edición o borrado*/
             'render': function(data) {
                 return '<a class="btn btn-primary editarbtn" href=http://localhost/php/editar.php?id_doctor=' + data + '>Editar</a>';
             }
         }, {
-            'data': 'idDoctor',
+            'data': 'id_doctor',
             /*añadimos las clases editarbtn y borrarbtn para procesar los eventos click de los botones. No lo hacemos mediante id ya que habrá más de un
             botón de edición o borrado*/
             'render': function(data) {
@@ -53,7 +54,9 @@ $(document).ready(function() {
         }]
 
 
-
-
     }); // FIN DEL DATATABLE
+
+
+
 }); // FIN DEL DOCUMENT READY
+
