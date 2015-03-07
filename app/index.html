@@ -1,3 +1,4 @@
+H
 <!doctype html>
 <html class="no-js">
 
@@ -17,6 +18,8 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <style>
+    </style>
 </head>
 
 <body>
@@ -24,25 +27,41 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div>
-        <table id="miTabla">
-            <thead>
-                <th>Doctor</th>
-                <th>Nº Colegiado</th>
-                <th>Clínica</th>
-                <th>Editar</th>
-                <th>Borrar</th>
-            </thead>
-            <tbody></tbody>
-            <tfoot>
-                <th>Doctor</th>
-                <th>Nº Colegiado</th>
-                <th>Clínica</th>
-                <th>Editar</th>
-                <th>Borrar</th>
-            </tfoot>
-        </table>
+
+
+    <div class="container-fluid">
+
+        <div id="tabla" class="row">
+            <div class="col-md-12">
+                <table id="miTabla" class="table stripe">
+                    <thead>
+                        <th>Nombre doctor</th>
+                        <th>Numero de colegiado</th>
+                        <th>Nombre Clinica</th>
+                        <th>Id clinica</th>
+                        <th>Editar</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                        <th>Nombre doctor</th>
+                        <th>Numero de colegiado</th>
+                        <th>Nombre Clinica</th>
+                        <th>Id clinica</th>
+                        <th>Editar</th>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
     </div>
+
+
+
+
+
+
+
 
 
 
@@ -51,12 +70,15 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/jquery-validate/dist/jquery.validate.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
 
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="bower_components/bootstrap.growl/bootstrap-growl.js"></script>
+    <script src="scripts/modal.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 </body>

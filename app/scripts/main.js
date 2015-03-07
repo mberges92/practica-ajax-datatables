@@ -1,9 +1,9 @@
 $(document).ready(function() {
-    $("#miTabla").dataTable({
-        "paging": true,
-        "searching": true,
-        "processing": true,
-        "serverSide": true,
+
+    var miTabla = $('#miTabla').DataTable({
+        'processing': true,
+        'serverSide': true,
+        'ajax': 'php/cargar_vista.php',
         'language': {
             'sProcessing': 'Procesando...',
             'sLengthMenu': 'Mostrar _MENU_ registros',
@@ -28,35 +28,31 @@ $(document).ready(function() {
                 'sSortDescending': ': Activar para ordenar la columna de manera descendente'
             }
         },
-        'ajax': 'php/cargar_vista.php',
         'columns': [{
-            'data': 'doctor'
+            'data': 'nombre'
         }, {
             'data': 'numcolegiado'
         }, {
-            'data': 'clinica'
+            'data': 'nombreClinica',
+            'render': function(data) {
+                return '<li>' + data + '</li><br>';
+            }
         }, {
-            'data': 'id_doctor',
-
+            'data': 'idClinica',
+            "visible": false
+        }, {
+            'data': 'idDoctor',
             /*añadimos las clases editarbtn y borrarbtn para procesar los eventos click de los botones. No lo hacemos mediante id ya que habrá más de un
             botón de edición o borrado*/
             'render': function(data) {
-                return '<a class="btn btn-primary editarbtn" href=http://localhost/php/editar.php?id_doctor=' + data + '>Editar</a>';
+                return '<a class="btn btn-primary editarbtn" href=http://localhost/php/modificar_clinica.php?id_doctor=' + data + '>Editar</a><a data-toggle="modal" data-target="#basicModal"  class="btn btn-warning borrarbtn" href=http://localhost/php/borrar_doctor.php?id_doctor=' + data + '>Borrar</a>';
             }
-        }, {
-            'data': 'id_doctor',
-            /*añadimos las clases editarbtn y borrarbtn para procesar los eventos click de los botones. No lo hacemos mediante id ya que habrá más de un
-            botón de edición o borrado*/
-            'render': function(data) {
-                return '<a class="btn btn-warning borrarbtn" href=http://localhost/php/borrar.php?id_doctor=' + data + '>Borrar</a>';
-            }
-
         }]
+    });
 
 
-    }); // FIN DEL DATATABLE
+    // BORRAR
+    // AÑADIR
+    // EDITAR
 
-
-
-}); // FIN DEL DOCUMENT READY
-
+});

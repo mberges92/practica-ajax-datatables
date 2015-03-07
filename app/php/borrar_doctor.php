@@ -22,7 +22,7 @@ mysql_query('SET names utf8');
 if (isset($_REQUEST['id_doctor'])) {
     // param was set in the query string
     if (empty($_REQUEST['id_doctor'])) {
-        return "El parámetro id_doctor esta vacio.";
+        return "El parámetro id_doctor viene vacio!";
     }
     $id_doctor = $_REQUEST['id_doctor'];
 }
@@ -42,7 +42,7 @@ if (!$query_res) {
         $estado = mysql_errno();
     }
 } else {
-    $mensaje = "Borrado okay";
+    $mensaje = "Borrado correcto";
     $estado = 0;
 }
 $resultado = array();
